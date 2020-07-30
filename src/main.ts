@@ -12,7 +12,7 @@ async function run(): Promise<void> {
 
         const workspace: string = getInput('workspace') ?? DEFAULT_WORKSPACE;
 
-        createNpmrc(token, workspace);
+        await createNpmrc(token, workspace);
     } catch (error) {
         setFailed(error.message);
     }
