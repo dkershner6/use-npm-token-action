@@ -1,4 +1,4 @@
-# Jest Coverage Commenter GitHub Action
+# Use NPM Token GitHub Action
 
 Use an NPM token within an .npmrc file inside GitHub actions. Scoped packages are the primary use case.
 
