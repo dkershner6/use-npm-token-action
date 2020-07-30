@@ -1,19 +1,21 @@
-import * as core from '@actions/core'
-import {wait} from './wait'
+import { getInput, setFailed, setSecret } from '@actions/core';
+import createNpmrc from './createNpmrc';
+import { DEFAULT_WORKSPACE } from './constants';
 
 async function run(): Promise<void> {
-  try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
+    try {
+        const token: string = getInput('token');
+        if (!token || token.length === 0) {
+            setFailed('Invalid token or token not present');
+        }
+        setSecret(token);
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+        const workspace: string = getInput('workspace') ?? DEFAULT_WORKSPACE;
 
-    core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    core.setFailed(error.message)
-  }
+        await createNpmrc(token, workspace);
+    } catch (error) {
+        setFailed(error.message);
+    }
 }
 
-run()
+run();
