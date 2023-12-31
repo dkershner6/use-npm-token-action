@@ -1,5 +1,5 @@
 {
-  "name": "Use NPM Token",
+  "name": "use-npm-token-action",
   "description": "Use an NPM token within an .npmrc file inside GitHub actions. Scoped packages are the primary use case.",
   "scripts": {
     "build": "npx projen build",

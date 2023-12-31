@@ -12,12 +12,12 @@ const project = new Node20GitHubActionTypescriptProject({
         "dkershner6-projen-github-actions",
         "projen-github-action-typescript",
     ],
-    name: "Use NPM Token",
+    name: "use-npm-token-action",
     description:
         "Use an NPM token within an .npmrc file inside GitHub actions. Scoped packages are the primary use case.",
 
     actionMetadata: {
-        name: "Comment Reaction",
+        name: "Use NPM Token",
         description:
             "Use an NPM token within an .npmrc file inside GitHub actions. Scoped packages are the primary use case.",
         inputs: {
