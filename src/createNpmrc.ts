@@ -1,13 +1,13 @@
-import fs from 'fs';
-import { info } from '@actions/core';
-import { DEFAULT_WORKSPACE } from './constants';
+import fs from "fs";
+import { info } from "@actions/core";
+import { DEFAULT_WORKSPACE } from "./constants";
 
 const createNpmrc = async (token: string, workspace: string): Promise<void> => {
     await createDirectoryIfNotExists(workspace);
     await createNpmrcFile(token, workspace);
 };
 
-const createDirectoryIfNotExists = async (workspace: string) => {
+const createDirectoryIfNotExists = async (workspace: string): Promise<void> => {
     if (workspace !== DEFAULT_WORKSPACE) {
         await fs.promises.mkdir(workspace, { recursive: true });
     }
@@ -15,12 +15,12 @@ const createDirectoryIfNotExists = async (workspace: string) => {
 
 const createNpmrcFile = async (
     token: string,
-    workspace: string
+    workspace: string,
 ): Promise<void> => {
-    const filePath = `${workspace}${!workspace.endsWith('/') ? '/' : ''}.npmrc`;
+    const filePath = `${workspace}${!workspace.endsWith("/") ? "/" : ""}.npmrc`;
     await fs.promises.writeFile(
         filePath,
-        `//registry.npmjs.org/:_authToken=${token}`
+        `//registry.npmjs.org/:_authToken=${token}`,
     );
 
     info(`.npmrc created at ${filePath}`);

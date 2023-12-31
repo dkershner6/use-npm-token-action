@@ -29,11 +29,31 @@
       "type": "build"
     },
     {
+      "name": "dkershner6-projen-github-actions",
+      "type": "build"
+    },
+    {
+      "name": "eslint-config-prettier",
+      "type": "build"
+    },
+    {
       "name": "eslint-import-resolver-typescript",
       "type": "build"
     },
     {
       "name": "eslint-plugin-import",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-jest",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-sonarjs",
       "type": "build"
     },
     {
@@ -48,6 +68,10 @@
     {
       "name": "jest-junit",
       "version": "^15",
+      "type": "build"
+    },
+    {
+      "name": "prettier",
       "type": "build"
     },
     {
@@ -69,6 +93,10 @@
     },
     {
       "name": "ts-node",
+      "type": "build"
+    },
+    {
+      "name": "typedoc",
       "type": "build"
     },
     {
