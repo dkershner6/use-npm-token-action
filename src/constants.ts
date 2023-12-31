@@ -1,1 +1,1 @@
-export const DEFAULT_WORKSPACE = './';
+export const DEFAULT_WORKSPACE = "./";
