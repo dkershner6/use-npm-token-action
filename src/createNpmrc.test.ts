@@ -1,4 +1,5 @@
 import { readFileSync } from "fs";
+
 import createNpmrc from "../src/createNpmrc";
 
 describe("createNpmrc", () => {
