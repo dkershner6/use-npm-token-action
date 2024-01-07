@@ -1,5 +1,7 @@
 import fs from "fs";
+
 import { info } from "@actions/core";
+
 import { DEFAULT_WORKSPACE } from "./constants";
 
 const createNpmrc = async (token: string, workspace: string): Promise<void> => {
